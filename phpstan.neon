@@ -1,0 +1,7 @@
+parameters:
+    ignoreErrors:
+        - '#Call to an undefined method Mockery\\ExpectationInterface|Mockery\\HigherOrderMessage::once\(\).#'
+    excludes_analyse:
+        - '%currentWorkingDirectory%/tests/Tools/EntityFactory/*'
+        - '%currentWorkingDirectory%/app/External/Libraries/Doctrine/Extensions/*'
+        - '%currentWorkingDirectory%/tests/AbstractTestCase.php'

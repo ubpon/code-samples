@@ -1,0 +1,82 @@
+{
+  "name": "phpcircle-codesamples",
+  "description": "Code Samples",
+  "keywords": [
+    "codesamples",
+    "skeleton"
+  ],
+  "license": "Proprietary",
+  "type": "project",
+  "require": {
+    "php": ">=7.3",
+    "eoneopay/externals": "^1.0",
+    "eoneopay/framework": "dev-master",
+    "ext-json": "*",
+    "guzzlehttp/guzzle": "^6.0",
+    "aws/aws-sdk-php": "^3.71",
+    "eoneopay/currencies": "dev-master",
+    "gedmo/doctrine-extensions": "^2.4",
+    "laravel-doctrine/extensions": "^1.0",
+    "laravel-doctrine/migrations": "^1.2",
+    "laravel-doctrine/orm": "^1.4",
+    "ext-bcmath": "*",
+    "zendframework/zend-diactoros": "^2.1",
+    "loyaltycorp/easy-monorepo": "^0.6.0",
+    "algolia/algoliasearch-client-php": "^2.2",
+    "uploadcare/uploadcare-php": ">=v2.0,<3.0"
+  },
+  "require-dev": {
+    "league/flysystem": "^1.0",
+    "mockery/mockery": "^1.1",
+    "phpunit/phpunit": "^7.0",
+    "natepage/sniffs": "^1.1",
+    "phpstan/phpstan": "^0.11.1",
+    "roave/security-advisories": "dev-master",
+    "sebastian/phpcpd": "^4.0",
+    "squizlabs/php_codesniffer": "3.*",
+    "mikey179/vfsstream": "^1.6",
+    "fzaninotto/faker": "^1.8",
+    "brianium/paratest": "^2.1",
+    "sensiolabs/security-checker": "^5.0",
+    "symplify/easy-coding-standard": "^5.4",
+    "uploadcare/uploadcare-php": ">=v2.0,<3.0"
+  },
+  "autoload": {
+    "psr-4": {
+      "App\\": "app/"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "Tests\\App\\": "tests/"
+    }
+  },
+  "repositories": [
+    {
+      "type": "composer",
+      "url": "https://repo.packagist.com/eoneopay/"
+    },
+    {
+      "packagist.org": false
+    }
+  ],
+  "minimum-stability": "dev",
+  "prefer-stable": true,
+  "scripts": {
+    "standards": [
+      "@ecs",
+      "@phpstan",
+      "@security-check"
+    ],
+    "ecs": "vendor/bin/ecs check app tests",
+    "phpstan": "vendor/bin/phpstan analyse app tests --level=7 --ansi",
+    "paratest": "vendor/bin/paratest -p20",
+    "security-check": "vendor/bin/security-checker security:check",
+    "coverage" : "phpdbg -qrr vendor/bin/phpunit --colors=always --coverage-html ./coverage"
+  },
+  "config": {
+    "preferred-install": "dist",
+    "sort-packages": true,
+    "optimize-autoloader": true
+  }
+}
